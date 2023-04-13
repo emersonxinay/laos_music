@@ -1,7 +1,7 @@
 // Song data
 const songList = [
   {
-    title: "Sigo Pensandote - Laos, Strolling Rivera, Yhizzu",
+    title: "Sigo Pensándote - Laos, Strolling Rivera, Yhizzu",
     file: "../assets/sigo-pensadote.mp3",
     cover: "../assets/sigo-pensando.jpeg"
 
