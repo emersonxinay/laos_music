@@ -4635,6 +4635,24 @@ textarea.form-control-lg {
   top: -1px;
 }
 
+@media screen and (max-width: 768px) {
+  .badge {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .badge h2 {
+    
+    font-size: 100%;
+    text-align: center;
+    
+  }
+  #div_resumen a{
+    display: none;
+  }
+}
+
 .alert {
   --bs-alert-bg: transparent;
   --bs-alert-padding-x: 1rem;
