@@ -20,6 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/play_list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -55,6 +57,43 @@
                             <div class="fs-3 fw-light text-muted">Nos ayudamos entre todos para crecer</div>
                             <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Sangre latina para
                                     el mundo</span></h1>
+                            <!-- seccion de playlist  -->
+                            <div class="player mb-3">
+
+                                <!-- Title -->
+                                <h1 class="title" id="title"></h1>
+
+                                <!-- Cover -->
+                                <img src="" alt="" class="cover" id="cover">
+
+                                <!-- Audio HTML Media elememt -->
+                                <audio src="" id="audio"></audio>
+
+                                <!-- Progress bar -->
+                                <div id="progress-container" class="progress-container">
+                                    <section id="progress" class="progress"></section>
+                                </div>
+
+                                <!-- Controls -->
+                                <section class="controls">
+                                    <button class="prev">
+                                        <i id="prev" class="fas fa-backward"></i>
+                                    </button>
+                                    <button class="play">
+                                        <i id="play" class="fas fa-play"></i>
+                                    </button>
+                                    <button class="next">
+                                        <i id="next" class="fas fa-forward"></i>
+                                    </button>
+                                </section>
+
+                                <!-- Song list -->
+                                <ul class="songs" id="songs">
+                                    <!-- <li><a href="#">Song 1</a></li>
+                                                <li><a class="active" href="#">Song 2</a></li>
+                                                <li><a href="#">Song 3</a></li> -->
+                                </ul>
+                            </div>
                             <div class="d-grid  gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3"
                                 id="div_resumen">
                                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
@@ -450,6 +489,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="./js/play_list.js"></script>
 </body>
 
 </html>
