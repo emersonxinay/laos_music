@@ -128,6 +128,7 @@ h1, .h1 {
   }
 }
 
+
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
@@ -485,6 +486,22 @@ progress {
 [hidden] {
   display: none !important;
 }
+
+/* card de lanzamiento  */
+#suspiro-card {
+
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img_suspiro{
+  width: 70%;
+  border-radius: 20%;
+}
+/* fin de card de lanzamiento */
+
 
 .lead {
   font-size: 1.25rem;
