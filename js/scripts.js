@@ -11,6 +11,8 @@ var deadline = new Date("Apr 20, 2023 12:00:00").getTime();
 
 // Actualizar la cuenta regresiva cada segundo
 var x = setInterval(function () {
+  var fechaActual = new Date()
+  var year = fechaActual.getFullYear();
 
   // Obtener la fecha actual
   var now = new Date().getTime();
@@ -27,6 +29,8 @@ var x = setInterval(function () {
   // Mostrar la cuenta regresiva en el elemento HTML
   document.getElementById("fecha_lanzamiento").innerHTML = days + " d -" + hours + " h -"
     + minutes + " m -" + seconds + " s ";
+
+  document.getElementById("fecha_footer").innerHTML = year
 
   // Si la cuenta regresiva termina, mostrar un mensaje
   if (distance < 0) {
