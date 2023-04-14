@@ -19,6 +19,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/play_list.css">
+    <!-- iconos  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+
 </head>
 
 <body class="d-flex flex-column h-100 bg-light">
@@ -118,31 +122,63 @@
                         </div> -->
                     </section>
 
+                    <!-- seccion playlist -->
+                    <div class="player mb-3 ">
+
+                        <!-- Title -->
+                        <h1 class="title" id="title"></h1>
+
+                        <!-- Cover -->
+                        <img src="" alt="" class="cover" id="cover">
+
+                        <!-- Audio HTML Media elememt -->
+                        <audio src="" id="audio"></audio>
+
+                        <!-- Progress bar -->
+                        <div id="progress-container" class="progress-container">
+                            <section id="progress" class="progress"></section>
+                        </div>
+
+                        <!-- Controls -->
+                        <section class="controls ">
+                            <button class="prev">
+                                <i id="prev" class="fas fa-backward"></i>
+                            </button>
+                            <button class="play">
+                                <i id="play" class="fas fa-play"></i>
+                            </button>
+                            <button class="next">
+                                <i id="next" class="fas fa-forward"></i>
+                            </button>
+                        </section>
+
+                        <!-- Song list -->
+                        <ul class="songs" id="songs">
+                            <!-- <li><a href="#">Song 1</a></li>
+                                        <li><a class="active" href="#">Song 2</a></li>
+                                        <li><a href="#">Song 3</a></li> -->
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
     <!-- Footer-->
 
-    <footer class="bg-gradient-primary-to-secondary py-4 mt-auto">
-        <div class="d-flex justify-content-center  fs-2 gap-4">
-            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-            <a class="text-white" href="https://open.spotify.com/artist/2UjFOmURmfCMAH0PKKkJSB" target="_blank"
-                rel="noopener noreferrer"><i class="bi bi-spotify"></i></a>
-            <a class="text-white" href="https://web.facebook.com/Laos.Espinoza20" target="_blank"
-                rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-            <a class="text-white" href="https://www.instagram.com/_laos20/" target="_blank" rel="noopener noreferrer"><i
-                    class="bi bi-instagram"></i></a>
-            <a class="text-white" href="https://www.youtube.com/@LaosEspirre" target="_blank"
-                rel="noopener noreferrer"><i class="bi bi-youtube"></i></a>
-        </div>
+    <footer class=" bg-gradient-primary-to-secondary py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; 2023</div>
+                    <div class="small text-white m-0"><span class="fw-ligth ">By -</span> <a
+                            class="fw-bold text-decoration-none text-white" href="http://emersonespinoza.com"
+                            target="_blank" rel="noopener noreferrer">Compilando</a> </div>
                 </div>
-
                 <div class="col-auto">
+                    <div class="small text-white m-0">Copyright &copy; Laos Music - 2023 - <span
+                            id="fecha_footer"></span></div>
+                </div>
+                <div class="col-auto ">
                     <a class="small text-white" href="#!">Privacy</a>
                     <span class="mx-1">&middot;</span>
                     <a class="small text-white" href="#!">Terms</a>
@@ -155,7 +191,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="js/play_list.js"></script>
 </body>
 
 </html>
