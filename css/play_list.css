@@ -73,3 +73,15 @@
   color: white;
   font-weight: bold;
 }
+
+/* iframe de youtube */
+.youtube{
+  width: 560px;
+  height: 315px;
+}
+
+@media screen and (max-width: 768px) {
+  .youtube{
+  width: 315px;
+  height: 315px;
+}}
