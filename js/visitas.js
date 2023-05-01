@@ -21,17 +21,16 @@ function getCookie(nombre) {
     while (c.charAt(0) == ' ') c = c.substring(1, c.length);
     if (c.indexOf(nombreEQ) == 0) return c.substring(nombreEQ.length, c.length);
   }
-  var valor = 1; // Valor inicial aleatorio
-  document.cookie = nombre + "=" + valor + "; path=/";
-  return valor;
+  return null;
 }
 
 // Incrementar el contador de visitas
-var contador = parseInt(getCookie("visitas"));
-contador++;
-document.cookie = "visitas=" + contador + "; path=/";
+var totalVisitas = parseInt(getCookie("totalVisitas"));
+if (isNaN(totalVisitas)) {
+  totalVisitas = 0;
+}
+totalVisitas++;
+document.cookie = "totalVisitas=" + totalVisitas + "; path=/";
 
 // Mostrar el contador de visitas
-document.getElementById("contador-visitas").innerHTML = " " + contador + " ";
-
-
+document.getElementById("contador-visitas").innerHTML = "Esta página ha sido visitada " + totalVisitas + " veces.";
