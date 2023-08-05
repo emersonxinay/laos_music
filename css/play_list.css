@@ -86,8 +86,22 @@
   height: 315px;
 }
 
-@media screen and (max-width: 768px) {
-  .youtube{
-  width: 315px;
-  height: 315px;
-}}
+/* estilos para boton contador de minutos  */
+#time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ajusta esto según el tamaño deseado del botón */
+}
+
+#currentTime,
+#duration {
+  margin: 0 5px; /* Ajusta los márgenes entre los elementos según lo desees */
+}
+
+
+/* CSS para centrar el contenido del reproductor de audio */
+#audio-container {
+  display: flex;
+  justify-content: center;
+}
