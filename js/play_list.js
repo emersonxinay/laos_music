@@ -80,7 +80,7 @@ const songList = [
   },
   {
     title: "Te fuiste de Aquí- Laos (Cover - Reik)",
-    file: "../assets/manos-tijera-camilo-laos.mp3",
+    file: "../assets/te-fuiste-de-aqui-laos-reik.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
 ]
