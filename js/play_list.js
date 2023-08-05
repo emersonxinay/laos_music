@@ -62,6 +62,27 @@ const songList = [
     file: "../assets/laos11.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
+  // agregados agosto 2023
+  {
+    title: "Vuelve - (Laos - Tony López)",
+    file: "../assets/vuelve-laos-tonylopez.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
+  {
+    title: "Noviembre Sin Ti - Laos (Cover - Reik)",
+    file: "../assets/laos-noviembre-sin-si.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
+  {
+    title: "Manos de Tijera - Laos (Cover - Camilo)",
+    file: "../assets/manos-tijera-camilo-laos.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
+  {
+    title: "Te fuiste de Aquí- Laos (Cover - Reik)",
+    file: "../assets/manos-tijera-camilo-laos.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
 ]
 
 // Canción actual
