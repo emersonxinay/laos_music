@@ -105,3 +105,28 @@
   display: flex;
   justify-content: center;
 }
+
+.playlist-container {
+  height: 300px; /* Altura fija para la sección de playlist */
+  overflow-y: auto; /* Desbordamiento vertical con barra de desplazamiento */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .row.gx-5.align-items-center {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan verticalmente */
+  }
+
+  .col-xl-5 {
+    text-align: center;
+  }
+
+  .player {
+    margin-bottom: 20px;
+  }
+
+  .playlist-container {
+    margin-bottom: 20px;
+  }
+}
+

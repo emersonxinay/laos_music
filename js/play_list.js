@@ -131,11 +131,17 @@ function loadSongs() {
     li.appendChild(link)
     // Aañadir li a ul
     songs.appendChild(li)
+
+    // Si es la primera canción, agregar el identificador "firstSong"
+    if (index === 0) {
+      link.id = "firstSong";
+    }
   })
   // Simular clic en el primer enlace para cargar y reproducir la primera canción
   setTimeout(() => {
     const firstSongLink = document.querySelector("#songs a:first-child");
     firstSongLink.click();
+    document.getElementById("firstSong").scrollIntoView();
   }, 0); // Se establece el retraso en 0 milisegundos para que ocurra inmediatamente después de que termine la función loadSongs()
 }
 //::::::::::::>>>>> seccion transcurrir tiempo 

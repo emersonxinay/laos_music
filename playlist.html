@@ -131,7 +131,7 @@
                     </section>
 
                     <!-- seccion playlist -->
-                    <div class="player mb-3 ">
+                    <div class="player  mb-3 ">
                         <h2 class="text-gradient">Play List Laos</h2>
                         <!-- Title -->
                         <h1 class="title h5" id="title"></h1>
@@ -142,13 +142,20 @@
                         <!-- Audio HTML Media elememt -->
                         <audio src="" id="audio"></audio>
 
-                        <!-- Progress bar -->
                         <div id="progress-container" class="progress-container">
-                            <section id="progress" class="progress"></section>
+                            <div id="progress" class="progress"></div>
                         </div>
+                        <div id="time">
+                            <button class="text-gradient btn btn-primary mb-2">
+                                <span id="currentTime">00:00</span> - <span id="duration">00:00</span>
+
+                            </button>
+                        </div>
+
 
                         <!-- Controls -->
                         <section class="controls ">
+
                             <button class="prev">
                                 <i id="prev" class="fas fa-backward"></i>
                             </button>
@@ -159,13 +166,13 @@
                                 <i id="next" class="fas fa-forward"></i>
                             </button>
                         </section>
+                        <div class="playlist-container">
+                            <!-- Song list -->
+                            <ul class="songs" id="songs">
 
-                        <!-- Song list -->
-                        <ul class="songs" id="songs">
-                            <!-- <li><a href="#">Song 1</a></li>
-                                        <li><a class="active" href="#">Song 2</a></li>
-                                        <li><a href="#">Song 3</a></li> -->
-                        </ul>
+                            </ul>
+
+                        </div>
                     </div>
 
 
