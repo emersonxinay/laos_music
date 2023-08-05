@@ -132,7 +132,36 @@ function loadSongs() {
     // Aañadir li a ul
     songs.appendChild(li)
   })
+  // Simular clic en el primer enlace para cargar y reproducir la primera canción
+  setTimeout(() => {
+    const firstSongLink = document.querySelector("#songs a:first-child");
+    firstSongLink.click();
+  }, 0); // Se establece el retraso en 0 milisegundos para que ocurra inmediatamente después de que termine la función loadSongs()
 }
+//::::::::::::>>>>> seccion transcurrir tiempo 
+// Función auxiliar para formatear el tiempo en formato "mm:ss"
+function formatTime(timeInSeconds) {
+  const minutes = Math.floor(timeInSeconds / 60);
+  const seconds = Math.floor(timeInSeconds % 60);
+  return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
+// Actualizar barra de progreso de la canción y tiempo transcurrido
+function updateProgress(event) {
+  const { duration, currentTime } = event.srcElement;
+  const percent = (currentTime / duration) * 100;
+  progress.style.width = percent + "%";
+
+  // Actualizar tiempo transcurrido
+  const currentTimeElement = document.getElementById("currentTime");
+  currentTimeElement.innerText = formatTime(currentTime);
+
+  // Actualizar duración total
+  const durationElement = document.getElementById("duration");
+  durationElement.innerText = formatTime(duration);
+}
+
+//:::::>>>>>>> fin de transcurrir tiempo
 
 // Cargar canción seleccionada
 function loadSong(songIndex) {
@@ -146,12 +175,7 @@ function loadSong(songIndex) {
   }
 }
 
-// Actualizar barra de progreso de la canción
-function updateProgress(event) {
-  const { duration, currentTime } = event.srcElement
-  const percent = (currentTime / duration) * 100
-  progress.style.width = percent + "%"
-}
+
 
 // Hacer la barra de progreso clicable
 function setProgress(event) {
@@ -188,7 +212,7 @@ function pauseSong() {
 
 // Cambiar clase activa
 function changeActiveClass(lastIndex, newIndex) {
-  const links = document.querySelectorAll("a")
+  const links = document.querySelectorAll("#songs a")
   if (lastIndex !== null) {
     links[lastIndex].classList.remove("active")
   }

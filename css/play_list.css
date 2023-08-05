@@ -70,8 +70,14 @@
 }
 
 .songs a.active {
-  color: white;
+  
   font-weight: bold;
+  font-size: 18px;
+  
+  background: linear-gradient(to right, #056af6, #b41759);
+  background-clip: text;
+  -webkit-background-clip: text; /* Para navegadores basados en WebKit (Safari, Chrome) */
+  color: transparent;
 }
 
 /* iframe de youtube */
