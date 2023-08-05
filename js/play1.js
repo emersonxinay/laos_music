@@ -83,61 +83,62 @@ const songList = [
     file: "../assets/te-fuiste-de-aqui-laos-reik.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
-]
+];
 
 // Canción actual
-let actualSong = null
+let actualSong = null;
 
 // Capturar elementos del DOM para trabajar con JS
-const songs = document.getElementById("songs")
-const audio = document.getElementById("audio")
-const cover = document.getElementById("cover")
-const title = document.getElementById("title")
-const play = document.getElementById("play")
-const prev = document.getElementById("prev")
-const next = document.getElementById("next")
-const progress = document.getElementById("progress")
-const progressContainer = document.getElementById("progress-container")
-progressContainer.addEventListener("click", setProgress)
+const songs = document.getElementById("songs");
+const audio = document.getElementById("audio");
+const cover = document.getElementById("cover");
+const title = document.getElementById("title");
+const play = document.getElementById("play");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const progress = document.getElementById("progress");
+const progressContainer = document.getElementById("progress-container");
+progressContainer.addEventListener("click", setProgress);
 
 // Escuchar el elemento AUDIO
-audio.addEventListener("timeupdate", updateProgress)
+audio.addEventListener("timeupdate", updateProgress);
 
 // Escuchar clicks en los controles
 play.addEventListener("click", () => {
   if (audio.paused) {
-    playSong()
+    playSong();
   } else {
-    pauseSong()
+    pauseSong();
   }
-})
+});
 
-next.addEventListener("click", () => nextSong())
-prev.addEventListener("click", () => prevSong())
+next.addEventListener("click", () => nextSong());
+prev.addEventListener("click", () => prevSong());
 
 // Cargar canciones y mostrar el listado
 function loadSongs() {
   songList.forEach((song, index) => {
     // Crear li
-    const li = document.createElement("li")
+    const li = document.createElement("li");
     // Crear a
-    const link = document.createElement("a")
+    const link = document.createElement("a");
     // Hidratar a
-    link.textContent = song.title
-    link.href = "#"
+    link.textContent = song.title;
+    link.href = "#";
     // Escuchar clicks
-    link.addEventListener("click", () => loadSong(index))
+    link.addEventListener("click", () => loadSong(index));
     // Añadir a li
-    li.appendChild(link)
+    li.appendChild(link);
     // Aañadir li a ul
-    songs.appendChild(li)
-  })
+    songs.appendChild(li);
+  });
   // Simular clic en el primer enlace para cargar y reproducir la primera canción
   setTimeout(() => {
     const firstSongLink = document.querySelector("#songs a:first-child");
     firstSongLink.click();
   }, 0); // Se establece el retraso en 0 milisegundos para que ocurra inmediatamente después de que termine la función loadSongs()
 }
+
 //::::::::::::>>>>> seccion transcurrir tiempo 
 let isDurationAvailable = false;
 
@@ -171,92 +172,90 @@ function updateProgress(event) {
 // Cargar canción seleccionada
 function loadSong(songIndex) {
   if (songIndex !== actualSong) {
-    changeActiveClass(actualSong, songIndex)
-    actualSong = songIndex
-    audio.src = "./audio/" + songList[songIndex].file
-    playSong()
-    changeSongtitle(songIndex)
-    changeCover(songIndex)
+    changeActiveClass(actualSong, songIndex);
+    actualSong = songIndex;
+    audio.src = songList[songIndex].file;
+    playSong();
+    changeSongtitle(songIndex);
+    changeCover(songIndex);
   }
 }
 
-
-
 // Hacer la barra de progreso clicable
 function setProgress(event) {
-  const totalWidth = this.offsetWidth
-  const progressWidth = event.offsetX
-  const current = (progressWidth / totalWidth) * audio.duration
-  audio.currentTime = current
+  const totalWidth = this.offsetWidth;
+  const progressWidth = event.offsetX;
+  const current = (progressWidth / totalWidth) * audio.duration;
+  audio.currentTime = current;
 }
 
 // Actualiar controles
 function updateControls() {
   if (audio.paused) {
-    play.classList.remove("fa-pause")
-    play.classList.add("fa-play")
+    play.classList.remove("fa-pause");
+    play.classList.add("fa-play");
   } else {
-    play.classList.add("fa-pause")
-    play.classList.remove("fa-play")
+    play.classList.add("fa-pause");
+    play.classList.remove("fa-play");
   }
 }
 
 // Reproducir canción
 function playSong() {
   if (actualSong !== null) {
-    audio.play()
-    updateControls()
+    audio.play();
+    updateControls();
   }
 }
 
 // Pausar canción
 function pauseSong() {
-  audio.pause()
-  updateControls()
+  audio.pause();
+  updateControls();
 }
 
 // Cambiar clase activa
 function changeActiveClass(lastIndex, newIndex) {
-  const links = document.querySelectorAll("#songs a")
+  const links = document.querySelectorAll("#songs a");
   if (lastIndex !== null) {
-    links[lastIndex].classList.remove("active")
+    links[lastIndex].classList.remove("active");
   }
-  links[newIndex].classList.add("active")
+  links[newIndex].classList.add("active");
 }
 
 // Cambiar el cover de la canción
 function changeCover(songIndex) {
-  cover.src = "./img/" + songList[songIndex].cover
+  cover.src = songList[songIndex].cover;
 }
 
 // Cambiar el título de la canción
 function changeSongtitle(songIndex) {
-  title.innerText = songList[songIndex].title
+  title.innerText = songList[songIndex].title;
 }
 
 // Anterior canción
 function prevSong() {
   if (actualSong > 0) {
-    loadSong(actualSong - 1)
+    loadSong(actualSong - 1);
   } else {
-    loadSong(songList.length - 1)
+    loadSong(songList.length - 1);
   }
 }
 
 // Siguiente canción
 function nextSong() {
   if (actualSong < songList.length - 1) {
-    loadSong(actualSong + 1)
+    loadSong(actualSong + 1);
   } else {
-    loadSong(0)
+    loadSong(0);
   }
 }
 
 // Lanzar siguiente canción cuando se acaba la actual
-audio.addEventListener("ended", () => nextSong())
+audio.addEventListener("ended", () => nextSong());
 
 // GO!
-loadSongs()
+loadSongs();
 
 //::::::: configurar para que escuche las computadoras
 window.onload = function () {
