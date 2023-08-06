@@ -6,6 +6,12 @@ const songList = [
     cover: "../assets/sigo-pensando.jpeg"
 
   },
+
+  {
+    title: "Noche de Abril - Laos ft Lyon Rojas ft Strolling Rivera ft Dafyer ",
+    file: "../assets/noche-de-abril-Laos-lyon-f.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
   {
     title: "The Weeknd - Save Your Tears (Spanish Versión - Laos) ",
     file: "../assets/laos.mp3",
@@ -100,6 +106,7 @@ const progress = document.getElementById("progress")
 const progressContainer = document.getElementById("progress-container")
 progressContainer.addEventListener("click", setProgress)
 
+
 // Escuchar el elemento AUDIO
 audio.addEventListener("timeupdate", updateProgress)
 
@@ -145,7 +152,48 @@ function loadSongs() {
   }, 0); // Se establece el retraso en 0 milisegundos para que ocurra inmediatamente después de que termine la función loadSongs()
 }
 //::::::::::::>>>>> seccion transcurrir tiempo 
-let isDurationAvailable = false;
+// let isDurationAvailable = false;
+// const audioPlayer = document.getElementById("audio");
+
+// const currentTimeElement = document.getElementById("currentTime");
+// const durationElement = document.getElementById("duration");
+
+// // Función auxiliar para formatear el tiempo en formato "mm:ss"
+// function formatTime(timeInSeconds) {
+//   const minutes = Math.floor(timeInSeconds / 60);
+//   const seconds = Math.floor(timeInSeconds % 60);
+//   return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+// }
+
+// // Actualizar barra de progreso de la canción y tiempo transcurrido
+// function updateProgress(event) {
+//   const { duration, currentTime } = event.target;
+//   const percent = (currentTime / duration) * 100;
+//   progress.style.width = percent + "%";
+
+//   // Actualizar tiempo transcurrido
+//   currentTimeElement.innerText = formatTime(currentTime);
+
+//   // Si la duración está disponible, actualizar la duración total
+//   if (!isNaN(duration) && duration !== Infinity && !isDurationAvailable) {
+//     isDurationAvailable = true;
+//     durationElement.innerText = formatTime(duration);
+//   }
+// }
+
+// // Escuchar el evento "durationchange" para actualizar la duración
+// audioPlayer.addEventListener("durationchange", updateProgress);
+
+// // Escuchar el evento "timeupdate" para actualizar el progreso
+// audioPlayer.addEventListener("timeupdate", updateProgress);
+
+//:::::>>>>>>> fin de transcurrir tiempo
+
+//>>>>>>>> inicio segunda opción transcurrir tiempo
+
+const audioPlayer = document.getElementById("audio");
+const currentTimeElement = document.getElementById("currentTime");
+const durationElement = document.getElementById("duration");
 
 // Función auxiliar para formatear el tiempo en formato "mm:ss"
 function formatTime(timeInSeconds) {
@@ -155,24 +203,25 @@ function formatTime(timeInSeconds) {
 }
 
 // Actualizar barra de progreso de la canción y tiempo transcurrido
-function updateProgress(event) {
-  const { duration, currentTime } = event.srcElement;
+function updateProgress() {
+  const { duration, currentTime } = audioPlayer;
   const percent = (currentTime / duration) * 100;
   progress.style.width = percent + "%";
 
   // Actualizar tiempo transcurrido
-  const currentTimeElement = document.getElementById("currentTime");
   currentTimeElement.innerText = formatTime(currentTime);
 
-  // Si la duración está disponible, actualizar la duración total
-  if (!isNaN(duration) && duration !== Infinity && !isDurationAvailable) {
-    isDurationAvailable = true;
-    const durationElement = document.getElementById("duration");
-    durationElement.innerText = formatTime(duration);
-  }
+  // Actualizar la duración total
+  durationElement.innerText = formatTime(duration);
 }
 
-//:::::>>>>>>> fin de transcurrir tiempo
+// Escuchar el evento "loadedmetadata" para actualizar la duración
+audioPlayer.addEventListener("loadedmetadata", updateProgress);
+
+// Escuchar el evento "timeupdate" para actualizar el progreso
+audioPlayer.addEventListener("timeupdate", updateProgress);
+
+//>>>>>>>> fin de segunda opción transcurrir tiempo
 
 // Cargar canción seleccionada
 function loadSong(songIndex) {
