@@ -131,7 +131,7 @@ function loadSongs() {
     const link = document.createElement("a")
     // Hidratar a
     link.textContent = song.title
-    link.href = "#"
+    link.href = "#play-cancion"
     // Escuchar clicks
     link.addEventListener("click", () => loadSong(index))
     // Añadir a li
