@@ -91,6 +91,11 @@ const songList = [
     file: "../assets/te-fuiste-de-aqui-laos-reik.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
+  {
+    title: "Detente - Laos (Cover - Mike Bahía & Danny Ocean)",
+    file: "../assets/detente_Laos_Mike-Bahía_Danny-Ocean.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
 ]
 
 // Canción actual
