@@ -1,6 +1,11 @@
 // Song data
 const songList = [
   {
+    title: "Vuelve - (Laos - Tony López)",
+    file: "../assets/vuelve-laos-tonylopez.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
+  {
     title: "Sigo Pensándote - Laos, Strolling Rivera, Yhizzu",
     file: "../assets/sigo-pensadote.mp3",
     cover: "../assets/sigo-pensando.jpeg"
@@ -10,6 +15,11 @@ const songList = [
   {
     title: "Noche de Abril - Laos ft Lyon Rojas ft Strolling Rivera ft Dafyer ",
     file: "../assets/noche-de-abril-Laos-lyon-f.mp3",
+    cover: "../assets/sigo-pensando.jpeg"
+  },
+  {
+    title: "Una vez mas te pienso - BAND0 FT  LAOS",
+    file: "../assets/laos10.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
   {
@@ -58,22 +68,14 @@ const songList = [
     file: "../assets/laos9.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
-  {
-    title: "Una vez mas te pienso - BAND0 FT  LAOS",
-    file: "../assets/laos10.mp3",
-    cover: "../assets/sigo-pensando.jpeg"
-  },
+
   {
     title: "Tattoo - Camilo Ft Rauw Alejandro (Cover)",
     file: "../assets/laos11.mp3",
     cover: "../assets/sigo-pensando.jpeg"
   },
   // agregados agosto 2023
-  {
-    title: "Vuelve - (Laos - Tony López)",
-    file: "../assets/vuelve-laos-tonylopez.mp3",
-    cover: "../assets/sigo-pensando.jpeg"
-  },
+
   {
     title: "Noviembre Sin Ti - Laos (Cover - Reik)",
     file: "../assets/laos-noviembre-sin-si.mp3",
@@ -124,11 +126,14 @@ prev.addEventListener("click", () => prevSong())
 
 // Cargar canciones y mostrar el listado
 function loadSongs() {
+  const songsListElement = document.getElementById("songs");
   songList.forEach((song, index) => {
     // Crear li
     const li = document.createElement("li")
     // Crear a
     const link = document.createElement("a")
+    // Añadir li a la lista ordenada
+    songsListElement.appendChild(li);
     // Hidratar a
     link.textContent = song.title
     link.href = "#play-cancion"
